@@ -27,7 +27,7 @@ function addMuteAction(box) {
     // Controls should be hidden if extension is not installed
     const controlsElem = document.getElementById('controls');
     console.assert(controlsElem);
-    controlsElem.classList.remove('hidden');
+    controlsElem.style.display = '';
 
     const installedBadge = document.getElementById('installedBadge');
     console.assert(installedBadge);
@@ -39,10 +39,11 @@ function addMuteAction(box) {
     document.getElementById('ext-version').innerHTML = extVersion;
     const galVersion = document.getElementById('gal-version').innerHTML;
     if (extVersion !== galVersion) {
-        warningElem.classList.remove('hidden');
+        warningElem.style.display = '';
     }
 
     initBoxes();
+    addResetOnclick();
     document.getElementById('update-rows').addEventListener('click', initBoxes);
     document.getElementById('add-data-row').addEventListener('click', addResetOnclick);
 
