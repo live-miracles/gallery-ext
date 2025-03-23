@@ -1,12 +1,10 @@
 function initBoxes() {
+    console.log(document.querySelectorAll('.box').length);
     document.querySelectorAll('.box').forEach((box) => addMuteAction(box));
 }
 
-function addResetOnclick() {
-    document.querySelectorAll('.reset-btn').forEach((btn) => (btn.onclick = initBoxes));
-}
-
 function addMuteAction(box) {
+    console.log('Hi', box);
     const boxId = box.getAttribute('data-id');
     console.assert(boxId);
     const muteBtn = box.querySelector('.mute-btn');
@@ -43,9 +41,8 @@ function addMuteAction(box) {
     }
 
     initBoxes();
-    addResetOnclick();
     document.getElementById('update-rows').addEventListener('click', initBoxes);
-    document.getElementById('add-data-row').addEventListener('click', addResetOnclick);
+    document.getElementById('init-unmute').addEventListener('click', initBoxes);
 
     const audioLevelsElem = document.getElementById('audioLevels');
     console.assert(audioLevelsElem);
