@@ -29,8 +29,10 @@ function addMuteAction(box) {
 
     const installedBadge = document.getElementById('installedBadge');
     console.assert(installedBadge);
+    installedBadge.classList.add('badge-success');
     installedBadge.classList.remove('badge-error');
     installedBadge.innerHTML = 'Installed';
+
     const warningElem = document.getElementById('outdated-extension-warning');
     console.assert(warningElem);
     const extVersion = chrome.runtime.getManifest().version;
