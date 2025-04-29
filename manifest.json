@@ -1,6 +1,6 @@
 {
     "name": "Live Streaming Gallery",
-    "version": "3.1.2",
+    "version": "3.2.0",
     "description": "Miscellaneous features for Live Streaming Gallery",
     "permissions": ["storage", "tabs"],
     "host_permissions": [
@@ -44,6 +44,16 @@
             "all_frames": true
         },
         {
+            "matches": [
+                "https://live-miracles.github.io/gallery/m3u8-player.html*",
+                "https://live-miracles.github.io/stable/gallery/m3u8-player.html*",
+                "http://localhost:3000/gallery/m3u8-player.html*",
+                "http://localhost:3000/stable/gallery/m3u8-player.html*"
+            ],
+            "js": ["messages.js", "utils.js", "mu-iframe.js"],
+            "all_frames": true
+        },
+        {
             "matches": ["https://*.facebook.com/video/embed/*"],
             "js": ["messages.js", "utils.js", "fb-iframe.js"],
             "css": ["fb-styles.css"],
@@ -56,7 +66,10 @@
                 "http://localhost:3000/gallery/*",
                 "http://localhost:3000/stable/gallery/*"
             ],
-            "exclude_matches": ["*://*/gallery/screen-share.html*"],
+            "exclude_matches": [
+                "*://*/gallery/screen-share.html*",
+                "*://*/gallery/m3u8-player.html*"
+            ],
             "js": ["messages.js", "content-script.js"]
         }
     ],

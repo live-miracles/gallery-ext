@@ -1,5 +1,4 @@
 function initBoxes() {
-    console.log(document.querySelectorAll('.box').length);
     document.querySelectorAll('.box').forEach((box) => addMuteAction(box));
 }
 
